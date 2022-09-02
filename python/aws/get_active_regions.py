@@ -31,13 +31,16 @@ def get_active_aws_regions():
       active_regions.append(region)
 
   # return the active regions list
-  return active_regions
+  return active_regions, all_regions
 
 if __name__ == "__main__":
 
   # get the active regions in the account
-  regions = get_active_aws_regions()
+  active_regions, all_regions = get_active_aws_regions()
 
   # log them
   print("[+] Found the following active regions:")
-  print(regions)
+  print(active_regions)
+
+  print("[+] Total regions:")
+  print(all_regions)
